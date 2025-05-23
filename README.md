@@ -1,1 +1,1 @@
-l'objectif est de transformer le code c++ en java pour prouver que la migration se fait correctement selon les instructions données.
+l'objectif est de transformer le code c# avec WPF et .NET MAUI vers du code fait en node.JS
