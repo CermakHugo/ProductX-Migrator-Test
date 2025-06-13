@@ -1,1 +1,1 @@
-l'objectif est de transformer le code C# WPF ou MAUI vers du code écrit en node.JS et React
+l'objectif est de migré les codes C#, WPF, MAUI vers du code écrit en node.JS et React
