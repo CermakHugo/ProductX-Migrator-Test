@@ -1,0 +1,291 @@
+
+
+package.json
+```json
+{
+  "name": "calculator-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "build": "babel src --out-dir lib"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "redux": "^4.1.1",
+    "react-redux": "^7.2.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.10"
+  }
+}
+```
+
+index.js
+```javascript
+const express = require('express');
+const app = express();
+const port = 3000;
+const axios = require('axios');
+
+app.use(express.static('public'));
+
+app.get('/initialize-ui', (req, res) => {
+  axios.get('http://localhost:3000/api/initialize-ui')
+    .then(response => {
+      res.send(response.data);
+    })
+    .catch(error => {
+      console.error(error);
+    });
+});
+
+app.listen(port, () => {
+  console.log(`Server started on port ${port}`);
+});
+```
+
+src/index.js
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import store from './store';
+import Calculator from './Calculator';
+
+ReactDOM.render(
+  <Provider store={store}>
+    <Calculator />
+  </Provider>,
+  document.getElementById('root')
+);
+```
+
+src/Calculator.js
+```javascript
+import React, { useEffect } from 'react';
+import Display from './Display';
+import Buttons from './Buttons';
+import Menu from './Menu';
+import { connect } from 'react-redux';
+import { updateDisplay, updateButtons, updateMenu } from './actions';
+
+const Calculator = ({ display, buttons, menu, updateDisplay, updateButtons, updateMenu }) => {
+  useEffect(() => {
+    fetch('http://localhost:3000/api/initialize-ui')
+      .then(response => response.json())
+      .then(data => {
+        updateDisplay(data.display);
+        updateButtons(data.buttons);
+        updateMenu(data.menu);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }, [updateDisplay, updateButtons, updateMenu]);
+
+  return (
+    <div>
+      <Display display={display} />
+      <Buttons buttons={buttons} />
+      <Menu menu={menu} />
+    </div>
+  );
+};
+
+const mapStateToProps = state => {
+  return {
+    display: state.display,
+    buttons: state.buttons,
+    menu: state.menu
+  };
+};
+
+export default connect(mapStateToProps, { updateDisplay, updateButtons, updateMenu })(Calculator);
+```
+
+src/Display.js
+```javascript
+import React from 'react';
+
+const Display = ({ display }) => {
+  return (
+    <div>
+      <input type="text" value={display} />
+    </div>
+  );
+};
+
+export default Display;
+```
+
+src/Buttons.js
+```javascript
+import React from 'react';
+
+const Buttons = ({ buttons }) => {
+  return (
+    <div>
+      {buttons.map(button => (
+        <button key={button}>{button}</button>
+      ))}
+    </div>
+  );
+};
+
+export default Buttons;
+```
+
+src/Menu.js
+```javascript
+import React from 'react';
+
+const Menu = ({ menu }) => {
+  return (
+    <div>
+      {menu.map(item => (
+        <button key={item}>{item}</button>
+      ))}
+    </div>
+  );
+};
+
+export default Menu;
+```
+
+src/store.js
+```javascript
+import { createStore, combineReducers } from 'redux';
+import displayReducer from './reducers/displayReducer';
+import buttonsReducer from './reducers/buttonsReducer';
+import menuReducer from './reducers/menuReducer';
+
+const rootReducer = combineReducers({
+  display: displayReducer,
+  buttons: buttonsReducer,
+  menu: menuReducer
+});
+
+const store = createStore(rootReducer);
+
+export default store;
+```
+
+src/actions.js
+```javascript
+export const updateDisplay = display => {
+  return {
+    type: 'UPDATE_DISPLAY',
+    payload: display
+  };
+};
+
+export const updateButtons = buttons => {
+  return {
+    type: 'UPDATE_BUTTONS',
+    payload: buttons
+  };
+};
+
+export const updateMenu = menu => {
+  return {
+    type: 'UPDATE_MENU',
+    payload: menu
+  };
+};
+```
+
+src/reducers/displayReducer.js
+```javascript
+const initialState = '';
+
+const displayReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'UPDATE_DISPLAY':
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
+export default displayReducer;
+```
+
+src/reducers/buttonsReducer.js
+```javascript
+const initialState = [];
+
+const buttonsReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'UPDATE_BUTTONS':
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
+export default buttonsReducer;
+```
+
+src/reducers/menuReducer.js
+```javascript
+const initialState = [];
+
+const menuReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'UPDATE_MENU':
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
+export default menuReducer;
+```
+
+public/index.html
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Calculator</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="bundle.js"></script>
+</body>
+</html>
+```
+
+.babelrc
+```json
+{
+  "presets": ["@babel/preset-env", "@babel/preset-react"]
+}
+```
+
+server.js
+```javascript
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.get('/api/initialize-ui', (req, res) => {
+  const initialState = {
+    display: '',
+    buttons: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', '*', '/'],
+    menu: ['Clear', 'Backspace']
+  };
+  res.send(initialState);
+});
+
+app.listen(port, () => {
+  console.log(`Server started on port ${port}`);
+});
+```

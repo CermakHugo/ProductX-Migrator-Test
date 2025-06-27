@@ -1,0 +1,248 @@
+
+
+package.json
+```json
+{
+  "name": "calculator-app",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "redux": "^4.1.0",
+    "react-redux": "^7.2.2"
+  }
+}
+```
+
+calculator-service.js
+```javascript
+const initializeUI = () => {
+  return {
+    displayValue: '0',
+    buttons: [
+      { label: '7', value: 7 },
+      { label: '8', value: 8 },
+      { label: '9', value: 9 },
+      { label: '/', value: '/' },
+      { label: '4', value: 4 },
+      { label: '5', value: 5 },
+      { label: '6', value: 6 },
+      { label: '*', value: '*' },
+      { label: '1', value: 1 },
+      { label: '2', value: 2 },
+      { label: '3', value: 3 },
+      { label: '-', value: '-' },
+      { label: '0', value: 0 },
+      { label: '.', value: '.' },
+      { label: '=', value: '=' },
+      { label: '+', value: '+' }
+    ],
+    menu: [
+      { label: 'Clear', value: 'clear' },
+      { label: 'Backspace', value: 'backspace' }
+    ]
+  };
+};
+
+module.exports = { initializeUI };
+```
+
+calculator-controller.js
+```javascript
+const express = require('express');
+const router = express.Router();
+const { initializeUI } = require('./calculator-service');
+
+router.get('/initializeUI', (req, res) => {
+  const uiData = initializeUI();
+  res.json(uiData);
+});
+
+module.exports = router;
+```
+
+index.js
+```javascript
+const express = require('express');
+const app = express();
+const calculatorController = require('./calculator-controller');
+
+app.use('/api', calculatorController);
+
+app.listen(3000, () => {
+  console.log('Server started on port 3000');
+});
+```
+
+Calculator.js
+```javascript
+import React from 'react';
+import { connect } from 'react-redux';
+import CalculatorDisplay from './CalculatorDisplay';
+import CalculatorButtons from './CalculatorButtons';
+import CalculatorMenu from './CalculatorMenu';
+
+const Calculator = ({ uiData }) => {
+  return (
+    <div>
+      <CalculatorDisplay displayValue={uiData.displayValue} />
+      <CalculatorButtons buttons={uiData.buttons} />
+      <CalculatorMenu menu={uiData.menu} />
+    </div>
+  );
+};
+
+const mapStateToProps = (state) => {
+  return { uiData: state.calculator };
+};
+
+export default connect(mapStateToProps)(Calculator);
+```
+
+CalculatorDisplay.js
+```javascript
+import React from 'react';
+import { connect } from 'react-redux';
+
+const CalculatorDisplay = ({ displayValue }) => {
+  return (
+    <div>
+      <input type="text" value={displayValue} readOnly />
+    </div>
+  );
+};
+
+const mapStateToProps = (state) => {
+  return { displayValue: state.calculator.displayValue };
+};
+
+export default connect(mapStateToProps)(CalculatorDisplay);
+```
+
+CalculatorButtons.js
+```javascript
+import React from 'react';
+import { connect } from 'react-redux';
+
+const CalculatorButtons = ({ buttons, onClickButton }) => {
+  return (
+    <div>
+      {buttons.map((button) => (
+        <button key={button.value} onClick={() => onClickButton(button.value)}>
+          {button.label}
+        </button>
+      ))}
+    </div>
+  );
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return { onClickButton: (value) => dispatch({ type: 'BUTTON_CLICK', value }) };
+};
+
+export default connect(null, mapDispatchToProps)(CalculatorButtons);
+```
+
+CalculatorMenu.js
+```javascript
+import React from 'react';
+import { connect } from 'react-redux';
+
+const CalculatorMenu = ({ menu, onClickMenu }) => {
+  return (
+    <div>
+      {menu.map((menuItem) => (
+        <button key={menuItem.value} onClick={() => onClickMenu(menuItem.value)}>
+          {menuItem.label}
+        </button>
+      ))}
+    </div>
+  );
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return { onClickMenu: (value) => dispatch({ type: 'MENU_CLICK', value }) };
+};
+
+export default connect(null, mapDispatchToProps)(CalculatorMenu);
+```
+
+calculatorReducer.js
+```javascript
+const initialState = {
+  displayValue: '0',
+  buttons: [],
+  menu: []
+};
+
+const calculatorReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'BUTTON_CLICK':
+      return { ...state, displayValue: action.value };
+    case 'MENU_CLICK':
+      return { ...state, displayValue: '0' };
+    case 'INITIALIZE_UI':
+      return { ...state, ...action.uiData };
+    default:
+      return state;
+  }
+};
+
+export default calculatorReducer;
+```
+
+store.js
+```javascript
+import { createStore, combineReducers } from 'redux';
+import calculatorReducer from './calculatorReducer';
+
+const rootReducer = combineReducers({
+  calculator: calculatorReducer
+});
+
+const store = createStore(rootReducer);
+
+export default store;
+```
+
+App.js
+```javascript
+import React, { useEffect } from 'react';
+import { Provider } from 'react-redux';
+import store from './store';
+import Calculator from './Calculator';
+import axios from 'axios';
+
+const App = () => {
+  useEffect(() => {
+    axios.get('/api/initializeUI')
+      .then(response => {
+        store.dispatch({ type: 'INITIALIZE_UI', uiData: response.data });
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }, []);
+
+  return (
+    <Provider store={store}>
+      <Calculator />
+    </Provider>
+  );
+};
+
+export default App;
+```
+
+index.js
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+
+ReactDOM.render(<App />, document.getElementById('root'));
+```
