@@ -1,6 +1,5 @@
 
 
-```javascript
 const express = require('express');
 const router = express.Router();
 
@@ -87,4 +86,3 @@ router.post('/calculate', tabbedPageController.handleCalculate.bind(tabbedPageCo
 router.post('/tab-switch', tabbedPageController.handleTabSwitch.bind(tabbedPageController));
 
 module.exports = router;
-```

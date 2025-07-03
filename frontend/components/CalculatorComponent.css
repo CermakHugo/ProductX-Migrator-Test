@@ -1,6 +1,6 @@
 
 
-```
+
 .calculator-container {
     width: 300px;
     margin: 50px auto;
@@ -108,4 +108,3 @@
 .calculator-button.clear:active {
     background-color: #FF8C00;
 }
-```

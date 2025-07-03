@@ -1,6 +1,3 @@
-
-
-```javascript
 export const HANDLE_INPUT = 'HANDLE_INPUT';
 
 export const handleInputChange = (input) => {
@@ -15,4 +12,4 @@ export const handleInputChange = (input) => {
         payload
     }
 }
-```
+

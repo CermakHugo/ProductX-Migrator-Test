@@ -76,6 +76,7 @@ const MainApplication = () => {
         handleEquals={handleEquals}
         handleClear={handleClear}
       />
+    </div>
   );
 };
 

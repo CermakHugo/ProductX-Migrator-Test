@@ -1,7 +1,3 @@
-
-
-package services;
-
 import axios from 'axios';
 import _ from 'lodash';
 import logger from '../logger';

@@ -1,7 +1,3 @@
-
-
-package actions/calculatorActions.js
-
 import { UPDATE_DISPLAY_FIELD, PERFORM_CALCULATION } from '../constants/calculatorConstants';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';

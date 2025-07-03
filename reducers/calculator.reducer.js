@@ -1,7 +1,3 @@
-
-
-package reducers;
-
 import { UPDATE_DISPLAY_FIELD, PERFORM_CALCULATION } from '../actions/calculator.actions';
 import { createStore, combineReducers } from 'redux';
 

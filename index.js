@@ -1,22 +1,7 @@
-
-
-{
-  "name": "calculator-app",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
-  },
-  "dependencies": {
-    "express": "^4.17.1"
-  },
-  "engines": {
-    "node": "14.17.0"
-  }
-}
+// node index.js (starter)
 
 const express = require('express');
-const calculatorController = require('./calculator-controller');
+const calculatorController = require('./controllers/calculator-controller');
 
 const app = express();
 const port = 3000;

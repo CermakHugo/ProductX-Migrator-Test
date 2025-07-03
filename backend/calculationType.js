@@ -1,6 +1,4 @@
 
-
-```typescript
 import express, { Router } from 'express';
 
 enum CalculationType {
@@ -50,4 +48,3 @@ router.get('/getCalculationType', (req, res) => {
 });
 
 export default router;
-```

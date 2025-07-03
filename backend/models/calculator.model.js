@@ -1,7 +1,3 @@
-
-
-package backend.models;
-
 class CalculatorModel {
     constructor() {
         this.input = '';

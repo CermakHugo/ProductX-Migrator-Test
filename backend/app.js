@@ -1,5 +1,3 @@
-
-
 const express = require('express');
 const mainApplicationRouter = require('./mainApplicationRouter');
 const CalculatorController = require('./calculator.controller');
@@ -27,12 +25,13 @@ app.post('/createMauiApp', (req, res) => {
 app.post('/calculate', (req, res) => {
     try {
         const { num1, operator, num2 } = req.body;
-        if (!num1 || num2 || operator;
-        if (!['+', '-', '*', '/'].includes(operator)) {
-            res.status(400).send({ error: 'Invalid operator' });
-            return;
+        if (!num1 || num2 || operator){
+            if (!['+', '-', '*', '/'].includes(operator)) {
+                res.status(400).send({ error: 'Invalid operator' });
+                return;
+            }
+            calculatorController.calculate(req, res);   
         }
-        calculatorController.calculate(req, res);
     } catch (error) {
         res.status(500).send({ error: 'Error during calculation' });
     }

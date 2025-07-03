@@ -1,7 +1,4 @@
 
-
-package backend.controllers;
-
 import express, { Request, Response } from 'express';
 import _ from 'lodash';
 

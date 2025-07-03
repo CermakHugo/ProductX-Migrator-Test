@@ -1,17 +1,6 @@
-
-
-package errorHandler;
-
-import express from 'express';
-import logger from '../logger';
-
 const handleError = (err, req, res, next) => {
     if (err) {
-        if (logger) {
-            logger.error(err);
-        } else {
-            console.error(err);
-        }
+        console.error(err);
         if (req && res) {
             res.status(500).json({ message: 'Internal Server Error', error: err.message });
         } else {
@@ -22,4 +11,4 @@ const handleError = (err, req, res, next) => {
     }
 }
 
-export default handleError;
+module.exports = handleError;

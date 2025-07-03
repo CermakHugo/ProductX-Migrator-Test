@@ -1,7 +1,4 @@
 
-
-package src/services/index.js
-
 import Calculator from './calculator';
 
 class ServicesIndex {

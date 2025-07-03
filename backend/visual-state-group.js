@@ -1,7 +1,3 @@
-
-
-package backend;
-
 import express from 'express';
 import { createStore, combineReducers } from 'redux';
 

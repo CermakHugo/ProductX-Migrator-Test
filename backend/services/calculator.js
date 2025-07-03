@@ -1,6 +1,3 @@
-
-
-```javascript
 class Calculator {
     constructor() {
         this.currentEntry = '';
@@ -98,4 +95,3 @@ class Calculator {
 }
 
 module.exports = Calculator;
-```

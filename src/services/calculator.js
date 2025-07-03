@@ -1,7 +1,4 @@
 
-
-package src.services;
-
 import _ from 'lodash';
 
 export class Calculator {

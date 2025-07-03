@@ -1,6 +1,4 @@
 
-
-```javascript
 const logger = require('logger');
 
 class Calculator {
@@ -37,4 +35,3 @@ class Calculator {
 }
 
 module.exports = Calculator;
-```

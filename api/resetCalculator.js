@@ -1,7 +1,3 @@
-
-
-package api
-
 import express, { Request, Response, NextFunction } from 'express';
 import logger from 'logger';
 import { validationResult } from 'express-validator';

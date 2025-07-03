@@ -1,7 +1,3 @@
-
-
-package api;
-
 import express from 'express';
 import errorHandler from '../errorHandler';
 

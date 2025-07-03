@@ -56,7 +56,7 @@ class TabbedPageService {
                     result = num1 * num2;
                     break;
                 case 'divide':
-                    if (num2 === 0 )) {
+                    if (num2 === 0 ) {
                     throw new Error('Division by zero');
                 }
                 result = num1 / num2;

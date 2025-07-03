@@ -1,27 +1,10 @@
 
 
-package.json
-```json
-{
-  "name": "backend",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
-  },
-  "dependencies": {
-    "express": "^4.17.1"
-  }
-}
-```
 
-index.js
-```javascript
 const express = require('express');
 const api = require('./api');
 const port = process.env.PORT || 3000;
-
+const router = express.Router();
 const app = express();
 
 app.use(express.json());
@@ -41,12 +24,6 @@ app.use((err, req, res, next) => {
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
 });
-```
-
-api/index.js
-```javascript
-const express = require('express');
-const router = express.Router();
 
 router.get('/users', (req, res) => {
   const users = [
@@ -79,4 +56,3 @@ router.delete('/users/:id', (req, res) => {
 });
 
 module.exports = router;
-```

@@ -1,6 +1,4 @@
 
-
-```javascript
 const HANDLE_INPUT = 'HANDLE_INPUT';
 
 const initialState = {
@@ -17,4 +15,3 @@ const handleInputReducer = (state = initialState, action) => {
 };
 
 export default handleInputReducer;
-```

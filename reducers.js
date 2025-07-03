@@ -1,7 +1,3 @@
-
-
-package reducers;
-
 import { UPDATE_VISUAL_STATE, RESET_VISUAL_STATE } from '../actions';
 
 const initialState = {

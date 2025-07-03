@@ -12,16 +12,13 @@ app.post('/api/calculator/getResult', (req, res) => {
     res.status(400).json({ error: 'Invalid request body' });
     return;
   }
-
+  const calculationData = req.body;
   try {
-    const calculationData = req.body;
-    try {
-      const result = calculator.calculate(calculationData);
-      res.json({ result });
-    } catch (error) {
-      res.status(500).json({ error: 'Error performing calculation' });
-    }
-  }
+    const result = calculator.calculate(calculationData);
+    res.json({ result });
+  } catch (error) {
+    res.status(500).json({ error: 'Error performing calculation' });
+  } 
 });
 
 app.get('/GetCurrentCalculation', (req, res) => {

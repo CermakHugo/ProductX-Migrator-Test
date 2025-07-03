@@ -1,7 +1,4 @@
 
-
-package src.services.storage;
-
 import { localStorage } from 'localStorage';
 
 const getPreviousNumber = () => {

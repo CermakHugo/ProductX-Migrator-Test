@@ -1,7 +1,3 @@
-
-
-package backend.services;
-
 import axios from 'axios';
 import _ from 'lodash';
 import calculate from '../controllers/calculate.controller';

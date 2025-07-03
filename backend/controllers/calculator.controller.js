@@ -1,6 +1,4 @@
 
-
-```javascript
 const express = require('express');
 const { createStore } = require('redux');
 const CalculatorService = require('../services/calculator.service');
@@ -134,4 +132,3 @@ calculatorController.post('/display-result', (req, res) => {
 });
 
 module.exports = calculatorController;
-```

@@ -1,7 +1,5 @@
 
 
-package backend.api;
-
 import express from 'express';
 import { calculate } from './calculator';
 

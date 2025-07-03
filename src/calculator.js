@@ -1,6 +1,4 @@
 
-
-```javascript
 class Calculator {
     constructor(calculation = '') {
         if (typeof calculation !== 'string') {
@@ -42,4 +40,3 @@ class Calculator {
 }
 
 module.exports = Calculator;
-```

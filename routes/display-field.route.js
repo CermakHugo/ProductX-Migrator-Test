@@ -1,6 +1,3 @@
-
-
-```javascript
 const express = require('express');
 const router = express.Router();
 const CalculatorController = require('../controllers/calculator.controller');
@@ -24,4 +21,3 @@ router.get('/display-field', async (req, res) => {
 });
 
 module.exports = router;
-```

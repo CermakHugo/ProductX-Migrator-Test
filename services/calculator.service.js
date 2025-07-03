@@ -1,12 +1,8 @@
-
-
-package services;
-
-import axios from 'axios';
-import _ from 'lodash';
-import math from 'mathjs';
-import express from 'express';
-import { createStore, combineReducers } from 'redux';
+const axios = require('axios');
+const _ = require('lodash');
+const math = require('mathjs');
+const express = require('express');
+const {createStore, combineReducers} = require('redux');
 
 const router = express.Router();
 
@@ -71,7 +67,7 @@ class CalculatorService {
     }
   }
 
-  initializeCalculator(handle, ownership) {
+  async initializeCalculator(handle, ownership) {
     try {
       const response = await axios.post('/initialize-calculator', { handle, ownership });
       return response.data;
@@ -124,7 +120,7 @@ class CalculatorService {
     }
   }
 
-  getDisplayField() {
+  async getDisplayField() {
     try {
       const response = await axios.get('/display-field');
       return response.data;
@@ -134,7 +130,7 @@ class CalculatorService {
     }
   }
 
-  switchCalculatorTab(tabState) {
+  async switchCalculatorTab(tabState) {
     try {
       store.dispatch({ type: 'SWITCH_CALCULATOR_TAB', payload: tabState });
       const response = await axios.post('/calculator-tab', { tabState });
@@ -146,4 +142,4 @@ class CalculatorService {
   }
 }
 
-export default CalculatorService;
+module.exports = {CalculatorService};

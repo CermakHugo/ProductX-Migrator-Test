@@ -1,7 +1,4 @@
 
-
-package backend.api;
-
 import express from 'express';
 import { handleButtonClick } from '../controllers/calculator.controller.js';
 

@@ -1,7 +1,4 @@
 
-
-package backend.types;
-
 class IntPtr {
     #value;
 

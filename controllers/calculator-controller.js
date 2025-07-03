@@ -1,10 +1,8 @@
 
-
-```javascript
 const express = require('express');
 const router = express.Router();
-const CalculatorService = require('../services/calculator-service');
-const errorHandler = require('../utils/error-handler');
+const CalculatorService = require('../services/calculator.service');
+const errorHandler = require('../errorHandler');
 
 router.get('/initializeUI', async (req, res) => {
     if (req.method !== 'GET') {
@@ -24,4 +22,3 @@ router.get('/initializeUI', async (req, res) => {
 });
 
 module.exports = router;
-```
