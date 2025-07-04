@@ -1,0 +1,25 @@
+
+
+import React, { useState } from 'react';
+
+function App() {
+  const [title, setTitle] = useState('Initial Title');
+  const [description, setDescription] = useState('Initial Description');
+
+  const update = () => {
+    setTitle('Updated Title');
+    setDescription('Updated Description');
+  };
+
+  return (
+    <div>
+      <header>
+        <h1>{title}</h1>
+        <p>{description}</p>
+      </header>
+      <button onClick={update}>Update</button>
+    </div>
+  );
+}
+
+export default App;
