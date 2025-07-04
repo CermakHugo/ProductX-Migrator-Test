@@ -1,0 +1,13 @@
+
+
+.window { background-color: #FFFFFF; border-width: 1px; }
+.grid { margin: 10px; }
+.button { font-size: 24px; font-family: Arial; background-color: #CCCCCC; color: #000000; }
+.header { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(2, 1fr); padding: 16px; background-color: #FFFFFF; font-family: Arial, sans-serif; }
+.current-calculation { font-size: 22pt; color: light; justify-self: end; align-self: start; }
+.result-text { font-size: 64pt; font-weight: bold; color: light; justify-self: end; align-self: end; }
+.separator { background-color: lightgray; height: 1px; }
+.keypad { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(4, 1fr); padding: 16px; background-color: #F7F7F7; font-family: Arial, sans-serif; }
+.number-button { }
+.operator-button { }
+.clear-button { }

@@ -1,0 +1,84 @@
+
+
+import React from 'react';
+
+const Calculator = () => {
+  const handleButtonClick = (value) => {
+    // TO DO: implement handleButtonClick logic
+  };
+
+  return (
+    <div>
+      <header className="header">
+        <span id="CurrentCalculation" className="current-calculation">
+          {currentCalculation}
+        </span>
+        <span id="resultText" className="result-text">
+          {result}
+        </span>
+        <hr className="separator" />
+      </header>
+      <Window title={title} />
+      <Grid margin={10}>
+        <button
+          value="7"
+          onClick={() => handleButtonClick("7")}
+          style={{
+            width: 50,
+            height: 50,
+            fontSize: 24,
+            fontFamily: "Arial",
+            backgroundColor: "#CCCCCC",
+            color: "#000000",
+          }}
+        >
+          7
+        </button>
+        <button
+          value="8"
+          onClick={() => handleButtonClick("8")}
+          style={{
+            width: 50,
+            height: 50,
+            fontSize: 24,
+            fontFamily: "Arial",
+            backgroundColor: "#CCCCCC",
+            color: "#000000",
+          }}
+        >
+          8
+        </button>
+        <button
+          value="9"
+          onClick={() => handleButtonClick("9")}
+          style={{
+            width: 50,
+            height: 50,
+            fontSize: 24,
+            fontFamily: "Arial",
+            backgroundColor: "#CCCCCC",
+            color: "#000000",
+          }}
+        >
+          9
+        </button>
+        <button
+          value="/"
+          onClick={() => handleButtonClick("/")}
+          style={{
+            width: 50,
+            height: 50,
+            fontSize: 24,
+            fontFamily: "Arial",
+            backgroundColor: "#CCCCCC",
+            color: "#000000",
+          }}
+        >
+          /
+        </button>
+      </Grid>
+    </div>
+  );
+};
+
+export default Calculator;
