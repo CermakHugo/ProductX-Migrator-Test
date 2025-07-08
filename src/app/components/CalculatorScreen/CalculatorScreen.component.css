@@ -1,0 +1,62 @@
+.calculator-screen {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2px;
+  padding: 16px;
+  justify-items: end;
+  align-items: start;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2px;
+  padding: 16px;
+  justify-items: end;
+  align-items: start;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2px;
+  padding: 16px;
+  justify-items: end;
+  align-items: start;
+}
+
+.current-calculation {
+  font-size: 22px;
+  color: light;
+  text-align: end;
+}
+
+.result-text {
+  font-size: 64px;
+  font-weight: bold;
+  color: light;
+  text-align: end;
+}
+
+.separator {
+  background-color: lightgray;
+  height: 1px;
+}
+
+.number-button {
+}
+
+.operator-button {
+}
+
+.equals-button {
+}
+
+.clear-button {
+}
+
+.negative-button {
+}
+
+.percentage-button {
+}
