@@ -1,0 +1,33 @@
+
+
+import React from 'react';
+import { MauiApp, AppShell, Grid, TextBlock } from '@maui-js/react';
+
+const CalculatorMainPage = () => {
+  const width = '100%';
+  const height = '100vh';
+  const backgroundColor = '#f0f0f0';
+  const fontFamily = 'Arial';
+  const fontSize = '16px';
+  const gridWidth = '100%';
+  const gridHeight = '100%';
+  const gridRows = ['auto', 'auto'];
+  const gridColumns = ['*'];
+  const textBlockSize = '24px';
+  const textColor = '#333';
+
+  return (
+    <MauiApp width={width} height={height} backgroundColor={backgroundColor} fontFamily={fontFamily} fontSize={fontSize}>
+      <AppShell>
+        <div className="calculator-interface">
+          <Grid width={gridWidth} height={gridHeight} rows={gridRows} columns={gridColumns}>
+            <TextBlock row={0} column={0} text={'Calculation'} fontSize={textBlockSize} fontColor={textColor} />
+            <TextBlock row={1} column={0} text={'Result'} fontSize={textBlockSize} fontColor={textColor} />
+          </Grid>
+        </div>
+      </AppShell>
+    </MauiApp>
+  );
+};
+
+export default CalculatorMainPage;

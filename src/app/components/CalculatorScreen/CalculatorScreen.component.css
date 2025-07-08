@@ -1,0 +1,11 @@
+.header { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; padding: 16px; align-items: end; }
+.current-calculation { font-size: 22px; color: light; text-align: end; }
+.result-text { font-size: 64px; font-weight: bold; color: light; text-align: end; }
+.separator { background-color: lightgray; height: 1px; }
+.keypad { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; padding: 16px; }
+.number-button { }
+.operator-button { }
+.equals-button { }
+.clear-button { }
+.negative-button { }
+.percentage-button { }
