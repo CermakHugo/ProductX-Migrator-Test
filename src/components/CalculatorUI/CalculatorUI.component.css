@@ -1,0 +1,51 @@
+.grid-container {
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 2px;
+  column-gap: 2px;
+  padding: 16px;
+}
+
+.header {
+  grid-row: 1;
+  grid-column: 1 / 5;
+  display: grid;
+  justify-items: end;
+  align-items: start;
+}
+
+.current-calculation {
+  font-size: 22px;
+  color: #ffffff;
+}
+
+.display {
+  grid-row: 2;
+  grid-column: 1 / 5;
+  display: grid;
+  justify-items: end;
+  align-items: end;
+}
+
+.result-text {
+  font-size: 64px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.keypad {
+  grid-row: 3 / 7;
+  grid-column: 1 / 5;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 2px;
+  column-gap: 2px;
+}
+
+.c-button, .plus-minus-button, .percent-button, .number-button, .operator-button {
+  font-size: 32px;
+  color: #ffffff;
+  background-color: transparent;
+}

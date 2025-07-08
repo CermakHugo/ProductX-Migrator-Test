@@ -1,0 +1,11 @@
+.grid-container { display: grid; grid-template-rows: 1fr 4fr; grid-template-columns: 1fr; gap: 2px; padding: 16px; max-width: 400px; margin: 0 auto; }
+.header { display: block; margin-bottom: 16px; }
+.current-calculation { font-size: 22px; color: #FFFFFF; text-align: end; vertical-align: start; }
+.result-text { font-size: 64px; font-weight: bold; color: #FFFFFF; text-align: end; vertical-align: end; }
+.box-view { background-color: #CCCCCC; height: 1px; }
+.keypad { display: grid; grid-template-rows: repeat(4, 1fr); grid-template-columns: repeat(4, 1fr); gap: 2px; }
+.number-button { font-size: 24px; color: #FFFFFF; background-color: #333333; border-radius: 4px; }
+.operator-button { font-size: 24px; color: #FFFFFF; background-color: #333333; border-radius: 4px; }
+.clear-button { font-size: 24px; color: #FFFFFF; background-color: #333333; border-radius: 4px; }
+.negative-button { font-size: 24px; color: #FFFFFF; background-color: #333333; border-radius: 4px; }
+.percentage-button { font-size: 24px; color: #FFFFFF; background-color: #333333; border-radius: 4px; }

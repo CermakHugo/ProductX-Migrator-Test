@@ -1,0 +1,14 @@
+
+
+.grid-container { display: grid; grid-template-rows: 1fr 4fr; grid-template-columns: 1fr; gap: 2px; padding: 16px; max-width: 400px; margin: 0 auto; }
+.header { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(6, 1fr); padding: 20px; background-color: #FFFFFF; font-family: OpenSansRegular; }
+.current-calculation { font-size: 22px; color: #CCCCCC; text-align: end; align-self: start; }
+.result-text { font-size: 64px; font-weight: bold; color: #CCCCCC; text-align: end; align-self: end; }
+.separator { background-color: #CCCCCC; height: 1px; }
+.keypad { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(6, 1fr); padding: 20px; background-color: #FFFFFF; font-family: OpenSansRegular; }
+.number-button { font-size: 32px; color: #CCCCCC; background-color: transparent; }
+.operator-button { font-size: 32px; color: #CCCCCC; background-color: transparent; }
+.equals-button { font-size: 32px; color: #CCCCCC; background-color: transparent; }
+.clear-button { font-size: 32px; color: #CCCCCC; background-color: transparent; }
+.negative-button { font-size: 32px; color: #CCCCCC; background-color: transparent; }
+.percentage-button { font-size: 32px; color: #CCCCCC; background-color: transparent; }

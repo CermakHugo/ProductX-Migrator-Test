@@ -1,0 +1,10 @@
+
+
+.calculator-interface { display: grid; grid-template-rows: repeat(6, 1fr); grid-template-columns: repeat(4, 1fr); padding: 16px; gap: 2px; }
+.input-field { background-color: #f0f0f0; border: none; padding: 10px; }
+.output-field { background-color: #f0f0f0; border: none; padding: 10px; }
+.numerical-button { background-color: #f0f0f0; border: none; padding: 10px; }
+.operator-button { background-color: #f0f0f0; border: none; padding: 10px; }
+.equals-button { background-color: #f0f0f0; border: none; padding: 10px; }
+.grid { background-color: black; width: 700px; height: 500px; }
+.text-block { font-size: 24px; color: black; }
