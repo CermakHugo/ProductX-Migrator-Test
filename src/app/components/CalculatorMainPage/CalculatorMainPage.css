@@ -1,50 +1,5 @@
 
 
-.calculator-interface {
-    display: grid;
-    grid-template-rows: repeat(6, 1fr);
-    grid-template-columns: repeat(4, 1fr);
-    padding: 16px;
-    gap: 2px;
-}
-
-.grid {
-    width: 700px;
-    height: 500px;
-    background-color: black;
-}
-
-.window {
-    width: 800px;
-    height: 600px;
-    background-color: white;
-}
-
-.text-block {
-    font-size: 24px;
-    font-color: black;
-}
-
-.grid-container {
-    /* Add styles for grid-container here */
-}
-
-.label {
-    /* Add styles for label here */
-}
-
-.entry {
-    /* Add styles for entry here */
-}
-
-.picker {
-    /* Add styles for picker here */
-}
-
-.button {
-    /* Add styles for button here */
-}
-
-.result-label {
-    /* Add styles for result-label here */
+.calculator-main-page {
+  background-color: #f0f0f0;
 }
