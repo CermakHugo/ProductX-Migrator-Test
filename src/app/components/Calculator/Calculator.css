@@ -1,0 +1,76 @@
+
+
+.calculator {
+  background-color: #ffffff;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  padding: 10px;
+  row-gap: 10px;
+  column-gap: 10px;
+}
+
+.header {
+  grid-row: 1;
+  grid-column: 1 / 5;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 10px;
+}
+
+.current-calculation {
+  font-size: 22px;
+  color: light;
+  text-align: end;
+  vertical-align: start;
+}
+
+.result-text {
+  font-size: 64px;
+  font-weight: bold;
+  color: light;
+  text-align: end;
+  vertical-align: end;
+}
+
+.keypad {
+  grid-row: 2;
+  grid-column: 1 / 5;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  padding: 10px;
+  row-gap: 5px;
+  column-gap: 5px;
+}
+
+.clear-button {
+  background-color: #CCCCCC;
+  border: 1px solid #AAAAAA;
+  font-size: 18px;
+  color: #333333;
+}
+
+.toggle-sign-button {
+  background-color: #CCCCCC;
+  border: 1px solid #AAAAAA;
+  font-size: 18px;
+  color: #333333;
+}
+
+.digit-button {
+  background-color: #CCCCCC;
+  border: 1px solid #AAAAAA;
+  font-size: 18px;
+  color: #333333;
+}
+
+.operator-button {
+  background-color: #CCCCCC;
+  border: 1px solid #AAAAAA;
+  font-size: 18px;
+  color: #333333;
+}
