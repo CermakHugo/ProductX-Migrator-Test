@@ -1,0 +1,101 @@
+
+
+.calculator-container {
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  padding: 10px;
+}
+
+.header {
+  grid-row: 1;
+  grid-column: 1 / 5;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 10px;
+}
+
+.current-calculation-label {
+  font-size: 22px;
+  color: light;
+  text-align: end;
+  vertical-align: start;
+}
+
+.result-text-label {
+  font-size: 64px;
+  font-weight: bold;
+  color: light;
+  text-align: end;
+  vertical-align: end;
+}
+
+.separator {
+  background-color: lightgray;
+  height: 1px;
+}
+
+.keypad-container {
+  grid-row: 2 / 7;
+  grid-column: 1 / 5;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 10px;
+}
+
+.keypad {
+  grid-row: 2 / 7;
+  grid-column: 1 / 5;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 10px;
+}
+
+.number-button {
+  font-size: 32px;
+  font-family: OpenSansRegular;
+  color: light;
+  background-color: transparent;
+}
+
+.operand-button {
+  font-size: 32px;
+  font-family: OpenSansRegular;
+  color: light;
+  background-color: transparent;
+}
+
+.operator-button {
+  font-size: 32px;
+  font-family: OpenSansRegular;
+  color: light;
+  background-color: transparent;
+}
+
+.equals-button {
+  font-size: 32px;
+  font-family: OpenSansRegular;
+  color: light;
+  background-color: transparent;
+}
+
+.clear-button {
+  font-size: 32px;
+  font-family: OpenSansRegular;
+  color: light;
+  background-color: transparent;
+}
+
+.negative-button {
+  font-size: 32px;
+  font-family: OpenSansRegular;
+  color: light;
+  background-color: transparent;
+}
+
+.percentage-button {
+  font-size: 32px;
+  font-family: OpenSansRegular;
+  color: light;
+  background-color: transparent;
+}
