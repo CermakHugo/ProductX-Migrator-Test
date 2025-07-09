@@ -1,8 +1,8 @@
 
 
-import { Route, Routes } from 'react-router-dom';
-import CalculatorService from './CalculatorService';
-import MauiProgramService from './MauiProgramService';
+const { Route, Routes } = require('react-router-dom');
+const CalculatorService = require('./services/calculator.service');
+const MauiProgramService = require('./MauiProgramService');
 
 const CalculatorRoutes = () => {
   return (

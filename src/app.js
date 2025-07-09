@@ -1,7 +1,5 @@
-
-
-import server from './server';
-import utilityService from './utilityService';
+const server = require('./server');
+const utilityService = require('./services/utility.service');
 
 const startServer = async () => {
   await server.start();
