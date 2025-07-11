@@ -1,0 +1,13 @@
+.grid-container { display: grid; grid-template-rows: repeat(6, 1fr); grid-template-columns: repeat(4, 1fr); gap: 2px; padding: 16px; }
+.header { grid-column: 1 / 5; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+.current-calculation { font-size: 22px; color: #FFFFFF; text-align: end; align-self: start; }
+.result-text { font-size: 64px; font-weight: bold; color: #FFFFFF; text-align: end; align-self: end; }
+.separator { background-color: #CCCCCC; height: 1px; }
+.keypad { grid-column: 1 / 5; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+.grid-keypad { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+.number-button { background-color: #FFFFFF; border: none; padding: 10px; font-size: 18px; }
+.operator-button { background-color: #FFFFFF; border: none; padding: 10px; font-size: 18px; }
+.equals-button { background-color: #FFFFFF; border: none; padding: 10px; font-size: 18px; }
+.clear-button { background-color: #FFFFFF; border: none; padding: 10px; font-size: 18px; }
+.negative-button { background-color: #FFFFFF; border: none; padding: 10px; font-size: 18px; }
+.percentage-button { background-color: #FFFFFF; border: none; padding: 10px; font-size: 18px; }
