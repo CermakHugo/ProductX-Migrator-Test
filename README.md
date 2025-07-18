@@ -1,1 +1,12 @@
 L'objectif est de migré l'ensemble d'un projet pour que celui-ci soit une application web, Node.js JavaScript pour le backend et React pour le frontend. Le projet migrer doit être une application web fonctionnel avec les même fonctionnalitées du projet initiale, il doit également respecter l'architecture du projet initiale. 
+
+Nous utiliserons dans ce nouveau projet :
+
+- Node.JS
+- JavaScript
+- Express
+- React
+
+Et nous n'utiliseront surtout pas :
+
+- Angular
