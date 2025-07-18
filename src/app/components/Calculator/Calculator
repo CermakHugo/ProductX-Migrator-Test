@@ -1,0 +1,38 @@
+
+
+import React, { Component } from 'react';
+
+class Calculator extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentNumberValue: 0,
+      isNumberValueLocked: false
+    };
+  }
+
+  lockNumberValue = () => {
+    this.LockNumberValue();
+  };
+
+  LockNumberValue = () => {
+    try {
+      this.setState({ isNumberValueLocked: true });
+    } catch (error) {
+      console.error('Error locking number value:', error);
+    }
+  };
+
+  render() {
+    return (
+      <div>
+        {/* existing Calculator component template content */}
+        <button onClick={this.lockNumberValue} disabled={this.state.isNumberValueLocked}>
+          {this.state.isNumberValueLocked ? 'Number Value Locked' : 'Lock Number Value'}
+        </button>
+      </div>
+    );
+  }
+}
+
+export default Calculator;

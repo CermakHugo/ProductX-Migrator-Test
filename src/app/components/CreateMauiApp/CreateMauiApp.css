@@ -1,0 +1,19 @@
+
+
+.CreateMauiApp {
+  /* Add styles for the CreateMauiApp component */
+}
+
+.CreateMauiApp button {
+  /* Add styles for the button element */
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.CreateMauiApp button:hover {
+  background-color: #3e8e41;
+}
