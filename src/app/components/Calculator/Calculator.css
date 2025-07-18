@@ -1,0 +1,18 @@
+
+
+.grid-container { display: grid; grid-template-rows: auto auto; grid-template-columns: repeat(4, 1fr); gap: 16px; padding: 16px; max-width: 400px; margin: 0 auto; }
+.header { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.current-calculation { font-size: 22px; color: #fff; text-align: end; align-self: start; background-color: #333; padding: 16px; border-radius: 10px; }
+.result-text { font-size: 64px; font-weight: bold; color: #fff; text-align: end; align-self: end; background-color: #444; padding: 16px; border-radius: 10px; }
+.separator { background-color: #ccc; height: 1px; }
+.keypad { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.Button { background-color: #fff; border: none; padding: 16px; font-size: 24px; border-radius: 10px; cursor: pointer; }
+.Button:hover { background-color: #ddd; }
+.ToTrimmedString-button { background-color: #fff; border: none; padding: 16px; font-size: 24px; border-radius: 10px; cursor: pointer; }
+.Calculate-button { background-color: #4CAF50; border: none; padding: 16px; font-size: 24px; border-radius: 10px; cursor: pointer; color: #fff; }
+.number-button { background-color: #fff; border: none; padding: 16px; font-size: 24px; border-radius: 10px; cursor: pointer; }
+.operator-button { background-color: #fff; border: none; padding: 16px; font-size: 24px; border-radius: 10px; cursor: pointer; }
+.equals-button { background-color: #4CAF50; border: none; padding: 16px; font-size: 24px; border-radius: 10px; cursor: pointer; color: #fff; }
+.clear-button { background-color: #fff; border: none; padding: 16px; font-size: 24px; border-radius: 10px; cursor: pointer; }
+.negative-button { background-color: #fff; border: none; padding: 16px; font-size: 24px; border-radius: 10px; cursor: pointer; }
+.percentage-button { background-color: #fff; border: none; padding: 16px; font-size: 24px; border-radius: 10px; cursor: pointer; }
