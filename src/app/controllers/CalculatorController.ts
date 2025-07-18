@@ -1,11 +1,10 @@
 
 
-import { Calculator } from '../components/Calculator';
+import Calculator from '../components/Calculator/Calculator';
 
 class CalculatorController {
   async calculate(value1: number, value2: number, mathOperator: string) {
-    const calculator = new Calculator();
-    const result = await calculator.calculate(value1, value2, mathOperator);
+    const result = await Calculator.calculate(value1, value2, mathOperator);
     return result;
   }
 }

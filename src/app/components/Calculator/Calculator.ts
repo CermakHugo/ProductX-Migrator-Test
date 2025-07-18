@@ -1,7 +1,7 @@
 
 
 class Calculator {
-  static calculate(value1: number, value2: number, mathOperator: string): number {
+   static calculate(value1: number, value2: number, mathOperator: string): number {
     let result: number;
     if (typeof value1 !== 'number' || typeof value2 !== 'number') {
       throw new Error('Invalid input: Both value1 and value2 must be numbers');
@@ -31,3 +31,5 @@ class Calculator {
     return result;
   }
 }
+
+export default Calculator

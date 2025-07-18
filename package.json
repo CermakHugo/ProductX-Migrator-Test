@@ -1,0 +1,23 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "L'objectif est de migré l'ensemble d'un projet pour que celui-ci soit une application web, Node.js JavaScript pour le backend et React pour le frontend. Le projet migrer doit être une application web fonctionnel avec les même fonctionnalitées du projet initiale, il doit également respecter l'architecture du projet initiale.",
+  "main": "src/app/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ProductX",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.28.0",
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "@babel/preset-react": "^7.27.1"
+  }
+}
