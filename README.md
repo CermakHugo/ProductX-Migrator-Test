@@ -6,6 +6,7 @@ Nous utiliserons dans ce nouveau projet :
 - JavaScript
 - Express
 - React
+- Redux
 
 Et nous n'utiliseront surtout pas :
 
