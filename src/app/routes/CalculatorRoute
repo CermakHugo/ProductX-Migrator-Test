@@ -1,0 +1,16 @@
+
+
+const express = require('express');
+const router = express.Router();
+const Calculator = require('../services/Calculator');
+
+router.post('/lockNumberValue', async (req, res) => {
+  try {
+    const result = await Calculator.lockNumberValue(req.body);
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+module.exports = router;

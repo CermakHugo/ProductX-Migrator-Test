@@ -1,0 +1,11 @@
+
+
+.grid-container { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(6, 1fr); gap: 10px; padding: 20px; }
+.current-calculation-label { grid-column: 1 / 5; font-size: 22px; color: #FFFFFF; text-align: end; align-self: start; }
+.result-label { grid-column: 1 / 5; font-size: 64px; font-weight: bold; color: #FFFFFF; text-align: end; align-self: end; }
+.button-grid { grid-column: 1 / 5; grid-row: 3 / 7; display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(4, 1fr); gap: 10px; }
+.button-grid button { width: 100%; height: 100%; font-size: 24px; }
+.result { font-size: 24px; color: #333; }
+.Button { background-color: #4CAF50; color: #fff; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; }
+.calculation-result { font-size: 24px; color: #333; }
+.selected-number { background-color: #ccc; padding: 10px; border-radius: 5px; }
